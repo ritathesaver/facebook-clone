@@ -1,0 +1,11 @@
+{
+  "extends": [
+    "airbnb",
+    "airbnb/hooks"
+  ],
+  "rules": {
+    "comma-dangle": 0,
+    "semi": 0,
+    "no-underscore-dangle": 0
+  }
+}

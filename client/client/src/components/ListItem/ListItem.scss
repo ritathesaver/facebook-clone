@@ -1,0 +1,91 @@
+.post_item {
+	width: 100%;
+	padding: 10px 20px;
+
+	background-color: #eeeeee;
+
+	border-radius: 1px;
+	border-bottom: 1px solid #37393b;
+
+	display: flex;
+	flex-direction: column;
+	box-sizing: border-box;
+
+
+	& + & {
+		border-top: none;
+	}
+	&_header {
+		display: flex;
+		flex-wrap: nowrap;
+		align-items: center;
+	}
+	&_avatar img{
+		border-radius:20px;
+		width:40px;
+		height:40px;
+	}
+
+	&_img img{
+		display:block;
+		border-radius:5px;
+		max-width: 100%;
+		margin-top:10px;
+	
+		margin: 0 auto;
+	}
+
+	&_img {
+		margin-bottom: 10px;
+	}
+
+	&_body{
+		padding: 10px 40px;
+	
+	
+	}
+
+
+	&_text{
+		margin: 0 auto;
+		line-height: 1.2;
+		font-family: 'Source Sans Pro', sans-serif;
+		display: -webkit-box;
+		font-size: 15px;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+		overflow-y: hidden;
+		margin-bottom:10px;
+
+	}
+	&_author{
+		font-family: 'Roboto', sans-serif;
+		font-weight: 400;
+		margin-left: 10px;
+	}
+
+	&_buttons{
+		display: flex;
+		justify-content: space-evenly;
+
+	}
+
+	&_line{
+		margin-top: 20px;
+		width: 20%;
+	}
+}
+.button{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.button_like{
+	width: 25px;
+	height: 25px;
+}
+
+.button_comm{
+	width: 30px;
+	height: 30px;
+}
