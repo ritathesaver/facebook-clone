@@ -1,0 +1,10 @@
+FROM node:12
+
+EXPOSE 5000
+COPY ["./package.json", "./package-lock.json", "/app/"]
+WORKDIR /app
+RUN npm i --quiet
+
+VOLUME "/app/src"
+
+CMD npm start

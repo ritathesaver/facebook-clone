@@ -1,0 +1,30 @@
+version: '3.6'
+services:
+  mongo:
+    container_name: facebook-mongo
+    image: mongo:4.2
+    networks:
+      - facebook
+    ports:
+      - 27022:27017
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+  api:
+    container_name: facebook-api
+    networks:
+      - facebook
+    build:
+      context: "./api"
+      dockerfile: ./Dockerfile.dev
+    volumes:
+      - type: bind
+        source: ./api/src
+        target: /app/src
+    ports:
+      - "5000:5000"
+    depends_on:
+      - mongo
+
+networks:
+  facebook:
+    name: facebook-network
