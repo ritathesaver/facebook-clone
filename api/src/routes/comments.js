@@ -19,7 +19,7 @@ router.get('/api/comments/:postId', async (ctx) => {
       user: users.find(u => u._id === comment.userId),
       ...comment._doc
     }))
-    console.log(ctx.body)
+
   } catch (err) {
     ctx.body = `error: ${err}`
   }

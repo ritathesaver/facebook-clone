@@ -15,8 +15,8 @@ router.get('/api/users', async (ctx) => {
 })
 
 router.post('/api/users', async (ctx) => {
-  const { name, surname, avatarUrl } = ctx.request.body
-  if (!name) {
+  const { name, surname, avatarUrl = 'https://github.com/ritathesaver/ms/blob/master/kek.jpg?raw=true' } = ctx.request.body
+  if (!name || !surname || !avatarUrl) {
     ctx.body = {
       error: 'Bad data'
     }
@@ -38,6 +38,7 @@ router.post('/api/users', async (ctx) => {
         resolve(res)
       })
     })
+    console.log(data)
     ctx.body = data
   } catch (err) {
     ctx.body = err
